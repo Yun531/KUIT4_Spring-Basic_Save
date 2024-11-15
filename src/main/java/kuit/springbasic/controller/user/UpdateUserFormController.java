@@ -16,7 +16,7 @@ import static kuit.springbasic.util.UserSessionUtils.getUserFromSession;
 public class UpdateUserFormController {
     private final UserRepository userRepository;
 
-    @GetMapping("/user/updateForm")
+//    @GetMapping("/user/updateForm")
     public String updateForm(HttpServletRequest request, Model model) {     //Model 객체는 스프링 프레임워크가 자동으로 주입한다
         String userId = request.getParameter("userId");
         User user = userRepository.findByUserId(userId);

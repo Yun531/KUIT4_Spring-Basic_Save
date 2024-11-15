@@ -18,7 +18,7 @@ import static kuit.springbasic.util.UserSessionUtils.USER_SESSION_KEY;
 public class UpdateUserController {
     private final UserRepository userRepository;
 
-    @RequestMapping("/user/update")
+//    @RequestMapping("/user/update")
     public String updateUser(@ModelAttribute User user, HttpServletRequest request){
         userRepository.update(user);
 
