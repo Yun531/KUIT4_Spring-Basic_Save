@@ -64,7 +64,7 @@ public class UserController {
         return "redirect:/user/loginForm";
     }
     @GetMapping("/updateForm")
-    public String updateUserForm(HttpServletRequest request, Model model) {
+    public String updateUserForm(HttpServletRequest request, Model model) {     //Model 객체는 스프링 프레임워크가 자동으로 주입한다
         String userId = request.getParameter("userId");
         User user = userRepository.findByUserId(userId);
         HttpSession session = request.getSession();
@@ -74,6 +74,7 @@ public class UserController {
                 model.addAttribute("user", user);
 
                 return "/user/updateForm";
+//                메서드에서 return "/user/updateForm";을 반환하면, 뷰 리졸버(View Resolver)가 이를 JSP 파일 경로로 해석한다.
             }
         }
 
