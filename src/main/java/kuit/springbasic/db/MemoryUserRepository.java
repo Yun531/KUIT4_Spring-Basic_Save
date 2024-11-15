@@ -16,6 +16,7 @@ public class MemoryUserRepository implements UserRepository {
 
     public MemoryUserRepository() {
         insert(new User("kuit","kuit","쿠잇","kuit@kuit.com"));
+        insert(new User("asd","asd","sample","asd@asd.com"));
     }
 
 

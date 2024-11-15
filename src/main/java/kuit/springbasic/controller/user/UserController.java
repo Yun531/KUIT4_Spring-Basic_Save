@@ -1,6 +1,16 @@
-package kuit.springbasic.controller;
+package kuit.springbasic.controller.user;
 
+import kuit.springbasic.db.UserRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Slf4j
+@Controller
+@RequiredArgsConstructor
 public class UserController {
+    private final UserRepository userRepository;
 
     /**
      * TODO: showUserForm

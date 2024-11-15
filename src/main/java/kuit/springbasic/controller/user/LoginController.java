@@ -1,4 +1,4 @@
-package kuit.springbasic.controller;
+package kuit.springbasic.controller.user;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -18,9 +18,6 @@ import static kuit.springbasic.util.UserSessionUtils.USER_SESSION_KEY;
 public class LoginController {
     private final UserRepository userRepository;
 
-    /**
-     * TODO: showLoginForm
-     */
 //    @RequestMapping(value = "/loginForm", method = RequestMethod.GET)
     @GetMapping("/loginForm")
     public String showLoginForm(){
@@ -28,9 +25,6 @@ public class LoginController {
         return "/user/login";
     }
 
-    /**
-     * TODO: showLoginFailed
-     */
     @RequestMapping("/loginFailed")
     public String showLoginFailed(){
         log.info("showLoginFailed");
@@ -38,7 +32,6 @@ public class LoginController {
     }
 
     /**
-     * TODO: login
      * loginV1 : @RequestParam("")
      * loginV2 : @RequestParam
      * loginV3 : @RequestParam 생략(비추천)
@@ -102,13 +95,9 @@ public class LoginController {
         if(user != null && user.isSameUser(loggedInUser)){
             HttpSession session = request.getSession();
             session.setAttribute(USER_SESSION_KEY, loggedInUser);
+
             return "redirect:/";
         }
         return "redirect:/user/loginFailed";
     }
-
-    /**
-     * TODO: logout
-     */
-
 }
