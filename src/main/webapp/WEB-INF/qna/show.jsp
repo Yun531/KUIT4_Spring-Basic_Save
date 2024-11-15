@@ -31,10 +31,10 @@
             <div class="article-util">
                 <ul class="article-util-list">
                     <c:if test="${not empty sessionScope.user}">
-                        <c:if test="${sessionScope.user.name == question.writer}">
+                        <c:if test="${sessionScope.user.userId == question.writer}">
                             <li>
                                 <a class="link-modify-article"
-                                   href="/qna/form?questionId=${question.questionId}">수정</a>
+                                   href="/qna/updateForm?questionId=${question.questionId}">수정</a>
                             </li>
                             <li>
                                 <a class="link-modify-article"
@@ -92,7 +92,7 @@
                             <input type="hidden" name="questionId" value="${question.questionId}">
                             <div class="form-group col-lg-4" style="padding-top:10px;">
                                 <input class="form-control" id="writer" name="writer" placeholder="이름"
-                                       value="${sessionScope.user.name}" readonly>
+                                       value="${sessionScope.user.userId}" readonly>
                             </div>
                             <div class="form-group col-lg-12">
                                 <textarea name="contents" id="contents" class="form-control" placeholder=""></textarea>

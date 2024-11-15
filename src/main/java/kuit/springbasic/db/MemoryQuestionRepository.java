@@ -19,7 +19,7 @@ public class MemoryQuestionRepository implements QuestionRepository{
     }
 
     public static int getPK() {
-        return ++PK;
+        return PK++;
     }
 
     public Question findByQuestionId(int id) {
