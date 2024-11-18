@@ -20,6 +20,7 @@ import static kuit.springbasic.util.UserSessionUtils.getUserFromSession;
 @RequestMapping("/user")
 public class UserController {
     private final UserRepository userRepository;
+
     @GetMapping("/form")
     public String showUserForm() {
         log.info("showForm");
@@ -29,7 +30,6 @@ public class UserController {
 
 
     /**
-     * TODO: createUser
      * createUserV1 : @RequestParam
      * createUserV2 : @ModelAttribute
      */

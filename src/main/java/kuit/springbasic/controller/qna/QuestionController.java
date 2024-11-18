@@ -16,7 +16,7 @@ import static kuit.springbasic.util.UserSessionUtils.USER_SESSION_KEY;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/qna")
-public class QuestionController {
+public class QuestionController { //컨트롤러 인자 관련해서? >ModelAndView > defaultModel
     private final QuestionRepository questionRepository;
 
     @GetMapping("/form")
@@ -29,7 +29,6 @@ public class QuestionController {
         return "redirect:/user/loginForm";
     }
     /**
-     * TODO: createQuestion
      * createQuestionV1 : @RequestParam
      * createQuestionV2 : @ModelAttribute
      */
@@ -57,7 +56,7 @@ public class QuestionController {
      */
 //    @GetMapping("/updateForm")
     public String showUpdateQuestionFormV1(@RequestParam("questionId") String questionId,
-                                         HttpServletRequest req, Model model){
+                                         HttpServletRequest req, Model model){   //todo model?
 
         HttpSession session = req.getSession();
         if (!UserSessionUtils.isLoggedIn(session)) {          // 회원만 질문 등록 가능

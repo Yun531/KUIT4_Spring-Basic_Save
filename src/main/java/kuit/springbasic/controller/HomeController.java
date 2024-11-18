@@ -56,7 +56,7 @@ public class HomeController {
 
         Collection<Question> questions = questionRepository.findAll();
         model.addAttribute("questions", questions);
-        return "home";
+        return "home";      //String 을 해당 이름의 view 를 반환한 식으로 자동으로 해석해서 사용함
     }
 
 }
