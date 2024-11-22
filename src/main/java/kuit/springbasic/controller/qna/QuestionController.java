@@ -70,7 +70,7 @@ public class QuestionController { //컨트롤러 인자 관련해서? >ModelAndV
         }
 
         model.addAttribute("question", question);
-        return "/qna/updateForm";
+        return "/qna/updateForm";           //컨트롤러에서 데이터를 Model에 추가하거나, HttpServletRequest에 직접 값을 설정하면 '뷰'로 자동으로 전달
     }
 
     @GetMapping("/updateForm")
